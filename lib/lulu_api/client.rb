@@ -20,5 +20,9 @@ module LuluApi
 
       self.class.base_uri ENV["LULU_USE_SANDBOX"] ? 'https://api.sandbox.lulu.com/' : 'https://api.lulu.com/'
     end
+
+    def base_url
+      self.class.base_uri
+    end
   end
 end
