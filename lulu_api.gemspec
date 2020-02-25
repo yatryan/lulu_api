@@ -11,8 +11,6 @@ Gem::Specification.new do |spec|
   spec.summary       = "Client Library for Lulu Print on Demand API"
   spec.homepage      = "https://github.com/yatryan/lulu_api"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/yatryan/lulu_api"
   spec.metadata["changelog_uri"] = "https://github.com/yatryan/lulu_api/CHANGELOG.md"
