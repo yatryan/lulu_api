@@ -2,6 +2,9 @@ module LuluApi
   class Client
     module Calculations
 
+      # Retrieves print job calculation
+      # @param body [Hash] Body to send
+      # @return [Hash] Job costs
       def print_job_cost_calculations(body = {})
         fetch_token if @token.nil?
 
