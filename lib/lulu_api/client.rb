@@ -13,6 +13,8 @@ module LuluApi
     headers 'Content-Type' => 'application/json'
     headers 'Cache-Control' => 'no-cache'
 
+    attr_accessor :token
+
     def initialize(client_key = nil, client_secret = nil, auth_string = nil)
       @client_key = client_key || ENV["LULU_CLIENT_KEY"]
       @client_secret = client_secret || ENV["LULU_SECRET_KEY"]
