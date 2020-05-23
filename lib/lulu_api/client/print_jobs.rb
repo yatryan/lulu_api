@@ -34,6 +34,7 @@ module LuluApi
         fetch_token if @token.nil?
 
         response = self.class.post("/print-jobs", { body: job.to_json })
+        handle_lulu_response response
       end
     end
   end
