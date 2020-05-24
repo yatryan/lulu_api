@@ -30,8 +30,23 @@ module LuluApi
 
     protected
 
+    ##
+    # Make API call to Lulu API. Handles if a 401 is retrieved.
+    #
+    # @param &block <Block> - Actual API Call
+    #
+    # @return response <Hash> - Response from Lulu
+    #
+    def make_api_call
+      response = yield
+
+      puts response.body, response.code, response.message, response.headers.inspect
+
+      handle_lulu_response response
+    end
+
     def handle_lulu_response(response)
-      puts response.response
+      # puts response.response
 
       if !response.response.kind_of?(Net::HTTPSuccess)
         LuluApi.logger.error("Error: Code: #{response.code}\nResponse:\n#{response.body}")
