@@ -45,8 +45,7 @@ module LuluApi
       is_successful = false
 
       while attempted_retries <= @max_retries && !is_successful
-        fetch_token if @token.nil?
-        response = yield
+        LuluApi.logger.debug "Lulu: make_api_call: Attempt #{attempted_retries+1}"
 
         fetch_token if @token.nil?
         response = yield
